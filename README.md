@@ -16,6 +16,8 @@ The first step was to get object points of the 2 dimensional and 3 dimensional p
 
 ![](https://github.com/jamestouri/Advanced-Lane-Finding/blob/master/download.png)
 
+From there the points on the chessboard were used on the images and videos to Undistort.  The points are give through the cv2.undistort()
+
 ### Color Transform and Gradient Thresholds 
 
 By applying various thresholds to alter the images and preprocess a pipeline when applying it on a video, I was able to build a pipeline that had color tranformations. 
@@ -28,7 +30,8 @@ Here is what it looked like adding all the Thresholds:
 
 ### Perspective Transform  
 
-I hardcoded the src and dst for transform, this was after working from the points on the Udacity videos.  I used cv2.getPerspectiveTransform and cv2.warpPerspective.
+I hardcoded the src and dst for transform, this was after working from the points on the Udacity videos.  I used cv2.getPerspectiveTransform and cv2.warpPerspective. 
+![](https://github.com/jamestouri/Advanced-Lane-Finding/blob/master/perspective.png)
 
 ### Adding the Lines
 

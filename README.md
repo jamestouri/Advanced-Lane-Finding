@@ -12,9 +12,12 @@ The steps of this company included:
 
 ### Camera Calibration and Distortion
 
-The first step was to get object points of the 2 dimensional and 3 dimensional part of the checkerboards.  I applied the cv2.calibrateCamera and then undistorted the images using cv2.undistort to normalize the image
+The first step was to get object points of the 2 dimensional and 3 dimensional part of the checkerboards.  
+![](https://github.com/jamestouri/Advanced-Lane-Finding/blob/master/Screen%20Shot%202017-09-26%20at%206.52.27%20PM.png)
 
-![](https://github.com/jamestouri/Advanced-Lane-Finding/blob/master/download.png)
+
+I applied the cv2.calibrateCamera and then undistorted the images using cv2.undistort to normalize the image
+https://github.com/jamestouri/Advanced-Lane-Finding/blob/master/image_undistort.png
 
 From there the points on the chessboard were used on the images and videos to Undistort.  The points are give through the cv2.undistort()
 
@@ -30,13 +33,44 @@ Here is what it looked like adding all the Thresholds:
 
 ### Perspective Transform  
 
-I hardcoded the src and dst for transform, this was after working from the points on the Udacity videos.  I used cv2.getPerspectiveTransform and cv2.warpPerspective. 
+I hardcoded the src and dst for transform, this was after working from the points on the Udacity videos.  For a while the pipeline wasn't able to stay on the line.  Although I was initially spending most of my time on the Color and Gradient thresholds, the lines stayed in the lanes after working on the Source and Destination points. 
+
+```
+src = np.float32([[475,530],
+        [830,530],
+        [130,720],
+        [1120,720]])
+    dst = np.float32([[365,540],
+        [990,540],
+        [320,720],
+        [960,720]])
+```
+
+I used cv2.getPerspectiveTransform and cv2.warpPerspective. 
 ![](https://github.com/jamestouri/Advanced-Lane-Finding/blob/master/per_transform.png)
 
 ### Adding the Lines
 
-I added the lines along with the measuring of the curvature inside the image, also showing the green is inside the line. Here is an example of the Lane. 
+I added the lines along with the measuring of the curvature inside the image, also showing the green is inside the line. Here is an example of the Line warped before putting it back to the original image: 
+
+![](https://github.com/jamestouri/Advanced-Lane-Finding/blob/master/Warped_lines.png)
+
+Here is the image after putting it back to the original view.
 
 ![](https://github.com/jamestouri/Advanced-Lane-Finding/blob/master/finished.png)
 
 The Project video is in the github repository under Project Output. 
+
+## Discussion
+
+This project was indeed thrilling and interesting.  There weren't a lot of variables to experiment as the previous projects, and therefore wasn't as frustrating as others when making minor changes. 
+
+The biggest challenge I faced was towards the end of the video when the car in the next lane drove past.  The line kept spreading to that car.  When I looked back on my images.  The car is bright white using the color thresholds of cv2.COLOR_BGR2LUV[:,:,2], and then I changed it to [:,:,0], the green line didn't stretch out to the car, but unfortunately had problems when the ground changed color and when during the video with the shadow.  
+
+In the end I was able to successfully go through the video by changing the src and dst points to zoom closer on the given perspective transformation.
+
+### Changes that could've been made
+Something I kept thinking about, if it made sense was to constrain the Green line to a certain width in the image, and see if that worked.  
+
+### Places the pipeline would likely fail
+Most likely a overcast weather, or strong amounts of rain, or heavy snow.  Also at night could be a problem for my pipeline.

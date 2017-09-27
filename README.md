@@ -1,5 +1,5 @@
 ## Advanced Lane Finding
-Here is the video of the project: ![Video](https://www.youtube.com/watch?v=B0HJ6Yp07AY&feature=youtu.be)
+Here is the video of the project: ![Video](https://youtu.be/B0HJ6Yp07AY)
 
 The steps of this company included:
 

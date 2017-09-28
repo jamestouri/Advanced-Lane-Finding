@@ -56,7 +56,7 @@ I added the lines along with the measuring of the curvature inside the image, al
 
 ![](https://github.com/jamestouri/Advanced-Lane-Finding/blob/master/Warped_lines.png)
 
-Here is the image after putting it back to the original view.
+Here is the image after putting it back to the original view, and declaring a mask through a bitwise operator with cv2.bitwise_and
 
 ![](https://github.com/jamestouri/Advanced-Lane-Finding/blob/master/finished.png)
 

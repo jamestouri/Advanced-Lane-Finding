@@ -1,5 +1,5 @@
 ## Advanced Lane Finding
-Here is the video of the project: https://www.youtube.com/watch?v=B0HJ6Yp07AY&feature=youtu.be
+
 
 The steps of this company included:
 
@@ -61,6 +61,10 @@ Here is the image after putting it back to the original view.
 ![](https://github.com/jamestouri/Advanced-Lane-Finding/blob/master/finished.png)
 
 The Project video is in the github repository under Project Output. 
+
+### Pipeline Video 
+
+Here is the video of the pipeline: https://www.youtube.com/watch?v=f_X73scM4fc&feature=youtu.be
 
 ## Discussion
 

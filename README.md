@@ -52,7 +52,7 @@ I used cv2.getPerspectiveTransform and cv2.warpPerspective.
 
 ### Adding the Lines
 
-I added the lines along with the measuring of the curvature inside the image, also showing the green is inside the line. Here is an example of the Line warped before putting it back to the original image: 
+I added the lines along with the measuring of the osculating circle inside the image, also showing the green is inside the line. Here is an example of the Line warped before putting it back to the original image: 
 
 ![](https://github.com/jamestouri/Advanced-Lane-Finding/blob/master/Warped_lines.png)
 

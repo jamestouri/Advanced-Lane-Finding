@@ -64,7 +64,7 @@ The Project video is in the github repository under Project Output.
 
 ### Pipeline Video 
 
-Here is the video of the pipeline: https://www.youtube.com/watch?v=f_X73scM4fc&feature=youtu.be
+Here is the video of the pipeline: https://www.youtube.com/watch?v=7c-nt__7hsE&feature=youtu.be
 
 ## Discussion
 
